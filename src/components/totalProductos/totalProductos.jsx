@@ -7,10 +7,10 @@ const TotalProductos = () => {
  
  const [total, setTotal] = useState([])
     useEffect(() => {
-        fetch('https://dh-heroes-app.herokuapp.com/api/heroes')
+        fetch('https://grupo-1-e-books.herokuapp.com/api/products')
         .then(response => response.json())
-        .then(({data}) => {
-            return setTotal(data)
+        .then(({count}) => {
+            return setTotal(count)
         })
     }, [])
    console.log(total)
@@ -23,8 +23,8 @@ const TotalProductos = () => {
                 <div className='card-body'>
                     <h5 className='card-title'>Total Productos</h5>
                     {
-                total && total.count && ( 
-                  <h5 className='card-title'><strong>Total:</strong> {total.count.count}</h5>
+                total && ( 
+                  <h5 className='card-title'><strong>Total:</strong> {total}</h5>
                 )
              }  
                 </div>
