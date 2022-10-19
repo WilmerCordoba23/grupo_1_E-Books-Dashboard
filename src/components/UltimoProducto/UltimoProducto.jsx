@@ -23,12 +23,12 @@ const UltimoProducto = ({ id }) => {
 
             <div >
                 <div className='col'>
-                    {id != "undefined" && id != 0 && UlProduct && (
+                    {id !== "undefined" && id !== 0 && UlProduct && (
                         <div className='card-body' key={UlProduct.id}>
                             <h5 className='card-title'>Ultimo Producto</h5>
                             {
                                 UlProduct && UlProduct.image && (
-                                    <img src={`${UlProduct.image}`} className='card-img' width={200} height={200} />
+                                    <img src={`${UlProduct.image}`} className='card-img' width={200} height={200} alt=''/>
 
                                 )
                             }

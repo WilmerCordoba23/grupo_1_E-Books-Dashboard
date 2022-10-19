@@ -55,12 +55,12 @@ const DashBoard = () => {
 
               <TotalUsuarios />
               {
-                idProduct != "undefined" && idProduct && (
+                idProduct !== "undefined" && idProduct && (
                   <UltimoProducto id={idProduct} />)
               }
 
               {
-                idUser != "undefined" && idUser && (
+                idUser !== "undefined" && idUser && (
                   <UltimoUsuario id={idUser} />)
               }
             </>

@@ -23,12 +23,12 @@ const UltimoUsuario = ({ id }) => {
 
             <div >
                 <div className='col'>
-                    {id != "undefined" && id != 0 && UlUser && (
+                    {id !== "undefined" && id !== 0 && UlUser && (
                         <div className='card-body' key={UlUser.id}>
                             <h5 className='card-title'>Ultimo Usuario</h5>
                             {
                                 UlUser && UlUser.image && (
-                                    <img src={`${UlUser.image}`} className='card-img' width={200} height={200} />
+                                    <img src={`${UlUser.image}`} className='card-img' width={200} height={200} alt=''/>
 
                                 )
                             }
