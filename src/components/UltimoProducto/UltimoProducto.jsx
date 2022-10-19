@@ -1,56 +1,50 @@
 import React, { useEffect, useState } from 'react'
 import './UltimoProducto.css'
-const UltimoProducto = () => {
- 
- const [total, setTotal] = useState([])
+const UltimoProducto = ({ id }) => {
+
+
+    const [UlProduct, setUlProduct] = useState([])
+
     useEffect(() => {
-        fetch('https://grupo-1-e-books.herokuapp.com/api/products')
-        .then(response => response.json())
-        .then(({products}) => {
-            return setTotal(products)
-        })
-    }, [])
 
-    
-    let lastProducts =  total.map(last => (
-            (last.id)
-        ))
+        fetch(`https://grupo-1-e-books.herokuapp.com/api/products/${id}`)
+            .then(response => response.json())
+            .then(product => {
+                return setUlProduct(product)
+            })
 
-      let lastProduct =  Math.max(...lastProducts)
-
-    console.log(lastProduct)
+    }, [id])
 
 
-    const [totals, setTotals] = useState([])
-    useEffect(() => {
-        fetch(`https://grupo-1-e-books.herokuapp.com/api/products/${lastProduct}`)
-        .then(response => response.json())
-        .then((last) => {
-            return setTotals(last)
-        })
-    }, [lastProduct])   
+    return (
 
-    console.log(totals)
-  return (
-  
-  
-    <div className='card col-12 col-md-2 ms-3'>
-       
-        <div >
-            <div className='col'>
-                <div className='card-body'>
-                    <h5 className='card-title'>Ultimo Producto</h5>
-                    {
-                total && ( 
-                  <h5 className='card-title'> {total}</h5>
-                )
-             }  
+
+        <div className='card col-12 col-md-2 ms-3'>
+
+            <div >
+                <div className='col'>
+                    {id != "undefined" && id != 0 && UlProduct && (
+                        <div className='card-body' key={UlProduct.id}>
+                            <h5 className='card-title'>Ultimo Producto</h5>
+                            {
+                                UlProduct && UlProduct.image && (
+                                    <img src={`${UlProduct.image}`} className='card-img' width={200} height={200} />
+
+                                )
+                            }
+                            {
+                                UlProduct && UlProduct.title && (
+                                    <h5 className='card-title'> {UlProduct.title}</h5>
+                                )
+                            }
+
+                        </div>)
+                    }
                 </div>
             </div>
         </div>
-    </div>
-  )
-  
+    )
+
 }
 
 export default UltimoProducto
