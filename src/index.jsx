@@ -6,6 +6,8 @@ import  DashBoard from './pages/DashBoard/DashBoard';
 
 
 import './index.css';
+import Categorias from './pages/Categorias/Categorias';
+import Productos from './pages/Productos/Productos';
 
 
 const router = createBrowserRouter([
@@ -16,7 +18,15 @@ const router = createBrowserRouter([
       {
         index:true,
         element: <DashBoard />,
-      }
+      },
+      {
+        path: 'categorias',
+        element: <Categorias />,
+      },
+      {
+        path: 'productos',
+        element: <Productos />,
+      },
     ],
   },
 ]);

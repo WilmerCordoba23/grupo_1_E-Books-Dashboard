@@ -1,9 +1,15 @@
-import React from 'react'
+import React  from 'react'
 import TotalProductos from '../../components/totalProductos/totalProductos'
+import TotalUsuarios from '../../components/TotalUsuarios/TotalUsuarios'
+import TotalCategorias from '../../components/TotalCategorias/TotalCategorias'
+import UltimoProducto from '../../components/UltimoProducto/UltimoProducto'
 
+import './DashBoard.css'
 
 const DashBoard = () => {
 
+
+  
   return (
     <div> 
         <div className='container'>
@@ -11,8 +17,15 @@ const DashBoard = () => {
             <hr />
             <div className='justify-content-start gap-3 row'>
                 {
-                   
-                 <TotalProductos />
+                   <>  
+                   <TotalProductos />
+
+                 <TotalCategorias  />
+
+                 <TotalUsuarios />
+                 
+                 </>
+               
                   
                 }
 

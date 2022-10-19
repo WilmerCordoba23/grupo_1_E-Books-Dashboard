@@ -1,13 +1,12 @@
-
 import React, { useEffect, useState } from 'react'
-import './totalProductos.css'
-const TotalProductos = () => {
+import './TotalUsuarios.css'
+const TotalUsuarios = () => {
 
 
  
  const [total, setTotal] = useState([])
     useEffect(() => {
-        fetch('https://grupo-1-e-books.herokuapp.com/api/products')
+        fetch('https://grupo-1-e-books.herokuapp.com/api/users')
         .then(response => response.json())
         .then(({count}) => {
             return setTotal(count)
@@ -21,7 +20,7 @@ const TotalProductos = () => {
         <div >
             <div className='col'>
                 <div className='card-body'>
-                    <h5 className='card-title'>Total Productos</h5>
+                    <h5 className='card-title'>Total Usuarios</h5>
                     {
                 total && ( 
                   <h5 className='card-title'><strong>Total:</strong> {total}</h5>
@@ -37,4 +36,4 @@ const TotalProductos = () => {
 
 
 
-export default TotalProductos
+export default TotalUsuarios
