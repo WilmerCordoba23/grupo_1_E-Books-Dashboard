@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
-import './TotalCategorias.css'
-const TotalCategorias = () => {
+import './TotalGeneros.css'
+const TotalGeneros = () => {
 
 
 
@@ -9,17 +9,17 @@ const TotalCategorias = () => {
     useEffect(() => {
         fetch('https://grupo-1-e-books.herokuapp.com/api/products')
             .then(response => response.json())
-            .then(({ countByCategory }) => {
-                return setTotal(countByCategory)
+            .then(({ countByGender }) => {
+                return setTotal(countByGender)
             })
     }, [])
     return (
 
 
-        <div className='card col-sm-6 col-lg-3 mx-2'>
+        <div className='card col-sm-6 col-lg-4  mx-2'>
 
             <div className='card-body'>
-                <h5 className='card-title'>Total Categorias</h5>
+                <h5 className='card-title'>Total Generos</h5>
                 {
                     total && (
                         <h5 className='card-title'><strong>Total:</strong> {Object.values(total).length}</h5>
@@ -35,4 +35,4 @@ const TotalCategorias = () => {
 
 
 
-export default TotalCategorias
+export default TotalGeneros

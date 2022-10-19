@@ -6,6 +6,7 @@ import TotalCategorias from '../../components/TotalCategorias/TotalCategorias'
 import UltimoProducto from '../../components/UltimoProducto/UltimoProducto'
 import './DashBoard.css'
 import UltimoUsuario from '../../components/UltimoUsuario/UltimoUsuario'
+import TotalGeneros from '../../components/TotalGeneros/TotalGeneros'
 
 const DashBoard = () => {
 
@@ -46,14 +47,17 @@ const DashBoard = () => {
       <div className='container'>
         <h1>DashBoard</h1>
         <hr />
-        <div className='justify-content-start gap-3 row'>
+        <div className='row justify-content-start gap-3'>
           {
             <>
               <TotalProductos />
 
               <TotalCategorias />
 
+              <TotalGeneros/>
+
               <TotalUsuarios />
+              <div className='row col-12'>
               {
                 idProduct !== "undefined" && idProduct && (
                   <UltimoProducto id={idProduct} />)
@@ -63,6 +67,7 @@ const DashBoard = () => {
                 idUser !== "undefined" && idUser && (
                   <UltimoUsuario id={idUser} />)
               }
+              </div>
             </>
 
           }

@@ -8,7 +8,7 @@ import  DashBoard from './pages/DashBoard/DashBoard';
 import './index.css';
 import Categorias from './pages/Categorias/Categorias';
 import Productos from './pages/Productos/Productos';
-
+import Generos from './pages/Generos/Generos';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +26,9 @@ const router = createBrowserRouter([
       {
         path: 'productos',
         element: <Productos />,
+      },{
+        path: 'generos',
+        element: <Generos />,
       },
     ],
   },

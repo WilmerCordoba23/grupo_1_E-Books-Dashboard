@@ -4,19 +4,19 @@ import './ListadoCategorias.css'
 
 
 
-const ListadoCategorias= (producto) => {
+const ListadoCategorias= ({producto}) => {
 
-   
+   console.log({producto})
 
     return(
-        <tbody>
-        <tr>
-          <td>{producto.id}</td>    
-          <td>b</td>
-          <td>c</td>
-          <td>d</td>
-        </tr>
-      </tbody>
+      <tbody>
+      <tr>
+        <td></td>
+        <td>Mas Vendidos</td>
+        <td>4</td>
+
+      </tr>
+    </tbody>
     )
     
 

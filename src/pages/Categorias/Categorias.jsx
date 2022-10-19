@@ -1,51 +1,73 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Categorias.css'
 
 
 const Categorias = () => {
-  
-  
-  return(
-  
+
+  const [list, setList] = useState([])
+  useEffect(() => {
+    fetch('https://grupo-1-e-books.herokuapp.com/api/products')
+      .then(response => response.json())
+      .then(({ countByCategory }) => {
+        return setList(countByCategory)
+      })
+  }, [])
+  console.log(list)
+
+  return (
+
     <div>
-     <div className='container'>
+      <div className='container'>
         <h1>Categorias</h1>
 
         <div className="table-responsive">
           <table className="table table-striped table-sm">
             <thead>
               <tr>
-                <th>Id</th>
                 <th>Nombre</th>
                 <th>Total de Productos</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Mas Vendidos</td>
-                <td>4</td>
-
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Novedades</td>
-                <td>3</td>
-                
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Recomendados</td>
-                <td>7</td>
-                
-              </tr>
-            </tbody>
+            <>
+              <tbody>
+                <tr>
+                  {
+                    list !== [] && list.Masvendidos && (
+                      <>
+                        <td>{list.Masvendidos.name}</td>
+                        <td>{list.Masvendidos.total}</td>
+                      </>
+                    )
+                  }
+                </tr>
+                <tr>
+                  {
+                    list !== [] && list.Novedades && (
+                      <>
+                        <td>{list.Novedades.name}</td>
+                        <td>{list.Novedades.total}</td>
+                      </>
+                    )
+                  }
+                </tr>
+                <tr>
+                  {
+                    list !== [] && list.Recomendados && (
+                      <>
+                        <td>{list.Recomendados.name}</td>
+                        <td>{list.Recomendados.total}</td>
+                      </>
+                    )
+                  }
+                </tr>
+              </tbody>
+            </>
           </table>
         </div>
-  
+
       </div>
     </div>)
-     
-  }
-  
-  export default Categorias
+
+}
+
+export default Categorias

@@ -19,16 +19,14 @@ const UltimoUsuario = ({ id }) => {
     return (
 
 
-        <div className='card col-12 col-md-2 ms-3'>
+        <div className='card col-sm-6 col-lg-6  ms-6 mx-4'>
 
-            <div >
-                <div className='col'>
                     {id !== "undefined" && id !== 0 && UlUser && (
                         <div className='card-body' key={UlUser.id}>
                             <h5 className='card-title'>Ultimo Usuario</h5>
                             {
                                 UlUser && UlUser.image && (
-                                    <img src={`${UlUser.image}`} className='card-img' width={200} height={200} alt=''/>
+                                    <img src={`${UlUser.image}`} className='card-img' width={250} height={250} alt='userimage'/>
 
                                 )
                             }
@@ -41,8 +39,6 @@ const UltimoUsuario = ({ id }) => {
                         </div>)
                     }
                 </div>
-            </div>
-        </div>
     )
 
 }

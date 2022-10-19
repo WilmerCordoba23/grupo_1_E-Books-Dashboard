@@ -19,16 +19,14 @@ const UltimoProducto = ({ id }) => {
     return (
 
 
-        <div className='card col-12 col-md-2 ms-3'>
+        <div className='card col-sm-6 col-lg-6  ms-6 mx-4'>
 
-            <div >
-                <div className='col'>
                     {id !== "undefined" && id !== 0 && UlProduct && (
                         <div className='card-body' key={UlProduct.id}>
                             <h5 className='card-title'>Ultimo Producto</h5>
                             {
                                 UlProduct && UlProduct.image && (
-                                    <img src={`${UlProduct.image}`} className='card-img' width={200} height={200} alt=''/>
+                                    <img src={`${UlProduct.image}`} className='card-img' width={250} height={250} alt='producimage'/>
 
                                 )
                             }
@@ -40,8 +38,7 @@ const UltimoProducto = ({ id }) => {
 
                         </div>)
                     }
-                </div>
-            </div>
+
         </div>
     )
 
