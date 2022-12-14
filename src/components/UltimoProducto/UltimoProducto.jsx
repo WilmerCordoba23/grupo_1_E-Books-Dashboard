@@ -7,7 +7,7 @@ const UltimoProducto = ({ id }) => {
 
     useEffect(() => {
 
-        fetch(`https://grupo-1-e-books.herokuapp.com/api/products/${id}`)
+        fetch(`https://e-books.onrender.com/api/products/${id}`)
             .then(response => response.json())
             .then(product => {
                 return setUlProduct(product)

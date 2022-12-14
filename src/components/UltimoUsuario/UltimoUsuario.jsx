@@ -7,7 +7,7 @@ const UltimoUsuario = ({ id }) => {
 
     useEffect(() => {
 
-        fetch(`https://grupo-1-e-books.herokuapp.com/api/user/${id}`)
+        fetch(`https://e-books.onrender.com/api/user/${id}`)
             .then(response => response.json())
             .then(User => {
                 return setUlUser(User)

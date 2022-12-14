@@ -7,7 +7,7 @@ const TotalProductos = () => {
 
   const [total, setTotal] = useState([])
   useEffect(() => {
-    fetch('https://grupo-1-e-books.herokuapp.com/api/products')
+    fetch('https://e-books.onrender.com/api/products')
       .then(response => response.json())
       .then(({ count }) => {
         return setTotal(count)

@@ -13,7 +13,7 @@ const DashBoard = () => {
   const [idProduct, setidProduct] = useState([])
 
   useEffect(() => {
-    fetch(`https://grupo-1-e-books.herokuapp.com/api/products`)
+    fetch(`https://e-books.onrender.com/api/products`)
       .then(response => response.json())
       .then(({ products }) => {
 
@@ -29,7 +29,7 @@ const DashBoard = () => {
   const [idUser, setidUser] = useState([])
 
   useEffect(() => {
-    fetch(`https://grupo-1-e-books.herokuapp.com/api/users`)
+    fetch(`https://e-books.onrender.com/api/users`)
       .then(response => response.json())
       .then(({ users }) => {
 

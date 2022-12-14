@@ -6,7 +6,7 @@ const Generos = () => {
 
   const [list, setList] = useState([])
   useEffect(() => {
-    fetch('https://grupo-1-e-books.herokuapp.com/api/products')
+    fetch('https://e-books.onrender.com/api/products')
       .then(response => response.json())
       .then(({ countByGender }) => {
         return setList(countByGender)

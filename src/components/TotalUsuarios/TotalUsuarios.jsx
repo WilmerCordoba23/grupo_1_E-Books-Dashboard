@@ -6,7 +6,7 @@ const TotalUsuarios = () => {
 
   const [total, setTotal] = useState([])
   useEffect(() => {
-    fetch('https://grupo-1-e-books.herokuapp.com/api/users')
+    fetch('https://e-books.onrender.com/api/users')
       .then(response => response.json())
       .then(({ count }) => {
         return setTotal(count)
