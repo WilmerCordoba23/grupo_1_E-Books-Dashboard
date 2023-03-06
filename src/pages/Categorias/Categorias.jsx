@@ -12,7 +12,7 @@ const Categorias = () => {
         return setList(countByCategory)
       })
   }, [])
-  console.log(list)
+  /* console.log(list) */
 
   return (
 

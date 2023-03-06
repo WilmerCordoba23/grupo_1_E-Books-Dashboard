@@ -6,7 +6,7 @@ import './ListadoCategorias.css'
 
 const ListadoCategorias= ({producto}) => {
 
-   console.log({producto})
+/*    console.log({producto}) */
 
     return(
       <tbody>

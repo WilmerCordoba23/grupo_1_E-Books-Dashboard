@@ -12,7 +12,7 @@ const Generos = () => {
         return setList(countByGender)
       })
   }, [])
-  console.log(list)
+  /* console.log(list) */
 
   return (
 
